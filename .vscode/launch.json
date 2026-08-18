@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "GDB RISC-V (Local)",
+      "type": "gdb",
+      "request": "launch",
+      "program": "${workspaceFolder}/Sesiones/sesion_01/laboratorio",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Compilar RISC-V (Sesión 1)",
+      "MIMode": "gdb",
+      "miDebuggerPath": "riscv64-unknown-elf-gdb",
+      "setupCommands": [
+        {
+          "description": "Habilitar pretty-printing",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "GDB RISC-V (QEMU Remoto)",
+      "type": "gdb",
+      "request": "launch",
+      "program": "${workspaceFolder}/Sesiones/sesion_01/laboratorio",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Compilar RISC-V (Sesión 1)",
+      "MIMode": "gdb",
+      "miDebuggerPath": "riscv64-unknown-elf-gdb",
+      "targetArchitecture": "arm64",
+      "miDebuggerArgs": "",
+      "setupCommands": [
+        {
+          "description": "Conectar a QEMU",
+          "text": "target remote :1234",
+          "ignoreFailures": false
+        },
+        {
+          "description": "Continuar ejecución",
+          "text": "c",
+          "ignoreFailures": false
+        }
+      ]
+    }
+  ]
+}

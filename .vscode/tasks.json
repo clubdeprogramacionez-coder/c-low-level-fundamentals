@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compilar RISC-V (Sesión 1)",
+      "type": "shell",
+      "command": "riscv64-unknown-elf-gcc",
+      "args": [
+        "-march=rv64gc",
+        "-mabi=lp64",
+        "-O0",
+        "${workspaceFolder}/Sesiones/sesion_01/laboratorio.c",
+        "-o",
+        "${workspaceFolder}/Sesiones/sesion_01/laboratorio"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Ejecutar en QEMU (Sesión 1)",
+      "type": "shell",
+      "command": "qemu-riscv64",
+      "args": [
+        "${workspaceFolder}/Sesiones/sesion_01/laboratorio"
+      ],
+      "dependsOn": "Compilar RISC-V (Sesión 1)",
+      "group": "run"
+    },
+    {
+      "label": "Inspeccionar ELF (objdump -h)",
+      "type": "shell",
+      "command": "riscv64-unknown-elf-objdump",
+      "args": [
+        "-h",
+        "${workspaceFolder}/Sesiones/sesion_01/laboratorio"
+      ]
+    },
+    {
+      "label": "Compilar a Ensamblador",
+      "type": "shell",
+      "command": "riscv64-unknown-elf-gcc",
+      "args": [
+        "-S",
+        "-O0",
+        "${workspaceFolder}/Sesiones/sesion_02/laboratorio.c",
+        "-o",
+        "${workspaceFolder}/Sesiones/sesion_02/laboratorio.s"
+      ]
+    }
+  ]
+}
