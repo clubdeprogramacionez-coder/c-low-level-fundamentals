@@ -3,7 +3,7 @@
 ## 1. Objetivo de Aprendizaje
 Entender cómo el compilador transforma la misma lógica en distintas versiones según el nivel de optimización y por qué eso afecta velocidad, tamaño y legibilidad.
 
-## 2. Lectura Guiada - Método Feynman
+## 2. Lectura Guiada 
 El compilador es como un diseñador que convierte tus ideas en un plano para la máquina. Con optimización baja, el plano es más claro y más fácil de seguir; con optimización alta, busca hacer el programa más eficiente en tiempo o en tamaño. Esa diferencia puede cambiar mucho el código generado, el uso de registros y la cantidad de instrucciones. Este tema te ayuda a ver que el mismo programa no siempre se materializa igual: depende de cómo se le pida al compilador que lo convierta.
 
 ## 3. Temas de la Sesión
@@ -45,7 +45,7 @@ int y = SQUARE(3);
 | -O2 | Optimización más robusta. | Muy común en desarrollo y despliegue. |
 | -O3 | Optimización agresiva. | Puede generar código más complejo y menos intuitivo. |
 
-## 6. LABORATORIO - Caso de Usuario / Requisito
+## 6. LABORATORIO 
 *Como:* estudiante de rendimiento y compilación
 *Quiero:* comparar cómo cambia el binario según el nivel de optimización
 *Para:* entender la relación entre legibilidad, tamaño y velocidad en software de bajo nivel
@@ -73,5 +73,5 @@ Checklist de Entregable:
 ## 8. Recursos Visuales
 [IMAGEN SUGERIDA: Gráfico comparativo de tamaño de binario vs nivel de optimización.]
 
-## 9. Pregunta de Cierre (Check de Feynman)
+## 9. Pregunta de Cierre 
 ¿Por qué el mismo programa puede producir binarios distintos según el nivel de optimización, y cómo eso modifica el entendimiento del código y su comportamiento real?

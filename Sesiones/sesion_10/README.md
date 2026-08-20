@@ -3,7 +3,7 @@
 ## 1. Objetivo de Aprendizaje
 Entender por qué una estructura en C no siempre ocupa exactamente la suma de sus campos y por qué la alineación importa en memoria.
 
-## 2. Lectura Guiada - Método Feynman
+## 2. Lectura Guia
 Cuando defines una estructura, estás pidiendo al compilador que “ponga juntos” varios elementos. Pero no siempre se mantiene una contigüidad perfecta: a veces se insertan huecos para respetar la alineación. Es como organizar objetos en una estantería: si cada objeto quiere empezar en una posición conveniente, puede quedar espacio vacío entre uno y otro. Ese espacio es el padding. La CPU y la arquitectura prefieren que ciertos tipos comiencen en direcciones alineadas, porque eso facilita el acceso rápido y consistente.
 
 ## 3. Temas de la Sesión
@@ -43,7 +43,7 @@ printf("%zu\n", sizeof(struct Persona));
 | `double` | 8 bytes. | Suele requerir alineación múltiplo de 8. |
 | `struct` | Suma de campos + padding. | Depende del orden y la arquitectura. |
 
-## 6. LABORATORIO - Caso de Usuario / Requisito
+## 6. LABORATORIO 
 *Como:* estudiante que diseña estructuras de datos
 *Quiero:* entender por qué el tamaño de una `struct` no siempre coincide con la suma de sus campos
 *Para:* mejorar el diseño de datos, la eficiencia y la compatibilidad con la arquitectura
@@ -68,5 +68,5 @@ Checklist de Entregable:
 ## 8. Recursos Visuales
 [IMAGEN SUGERIDA: Diagrama de bytes dentro de una estructura mostrando huecos de padding entre campos.]
 
-## 9. Pregunta de Cierre (Check de Feynman)
+## 9. Pregunta de Cierre 
 ¿Por qué dos estructuras con los mismos campos pueden ocupar tamaños distintos según el orden de los miembros, y cómo esto afecta la lectura de memoria y la eficiencia del programa?

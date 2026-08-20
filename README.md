@@ -2,14 +2,14 @@
 
 Curso de programación de bajo nivel en C centrado en arquitectura de memoria, aritmética de punteros y manipulación de registros a nivel de hardware. Impartido por el Instructor **Enrique Rosas Polo**  y Coinstructor **Darick Yael Gonzalez Mellado**, ambos integrantes del **Club de Programación de ESIME Zacatenco (IPN)**.
 
-## 📋 Estructura del Curso
+##  Estructura del Curso
 
 - **Sesiones 1-5**: Introducción a arquitectura, tipos de datos, operadores bit a bit, macros y punteros
 - **Sesiones 6-10**: Segmentos de memoria, stack, convenciones de llamada, ensamblador, estructuras
 - **Sesiones 11-15**: Memoria dinámica, punteros a funciones, registros CSR, MMIO, interrupciones
 - **Sesiones 16-20**: Optimizaciones, depuración, proyecto final, presentaciones
 
-## 🚀 Configuración Rápida
+##  Configuración Rápida
 
 ### En Codespaces (Recomendado)
 
@@ -44,7 +44,7 @@ winget install --id QEMU.QEMU -e
 # (por ejemplo, xPack o un ambiente WSL2/Ubuntu)
 ```
 
-## ⚙️ Herramientas de Instalación Necesarias
+##  Herramientas de Instalación Necesarias
 
 Para trabajar en este curso, necesitas tener instaladas las siguientes herramientas. La mayoría se incluyen automáticamente en Codespaces, pero si trabajas localmente, debes instalarlas manualmente.
 
@@ -655,7 +655,7 @@ make asm_sesion_02
 make objdump_sesion_01
 ```
 
-## 📚 Contenido por Sesión
+##  Contenido por Sesión
 
 ### Sesión 1: Introducción a Arquitecturas y Modelo de Memoria
 - **Conceptos**: Von Neumann vs Harvard, CISC vs RISC, ISA RISC-V (rv64gc), segmentos de proceso
@@ -682,7 +682,7 @@ make objdump_sesion_01
 - **Lab**: Recorrer array con aritmética de punteros, imprimir direcciones
 - **Herramientas**: `gcc`, `printf %p`, `qemu-riscv64`
 
-## 🛠️ Comandos Comunes
+##  Comandos Comunes
 
 ```bash
 # Compilar con cross-compiler RISC-V
@@ -732,7 +732,7 @@ riscv64-unknown-elf-gdb ./ejecutable -ex "target remote :1234"
 - Instructor: Enrique Rosas Polo
 - Coordinacion de formacion tecnica: Darick Yael Gonzalez Mellado
 - Estudiantes del curso Progamacion de bajo nivel con c: memoria, punteros y registros 2027-1
-## 📄 Licencia
+##  Licencia
 
 MIT - Libre para uso educativo
 
