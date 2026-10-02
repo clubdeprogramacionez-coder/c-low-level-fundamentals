@@ -1,6 +1,6 @@
 {
   "name": "RISC-V C Low-Level Development",
-  "image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-22.04",
+  "image": "mcr.microsoft.com/devcontainers/cpp:alpine",
   "features": {
     "ghcr.io/devcontainers/features/build-essential:1": {}
   },
@@ -8,11 +8,10 @@
     "vscode": {
       "extensions": [
         "ms-vscode.cpptools",
-        "ms-vscode.makefile-tools",
-        "ms-vscode.cmake-tools"
+        "ms-vscode.makefile-tools"
       ]
     }
   },
-  "postCreateCommand": "apt-get update && apt-get install -y gcc-riscv64-unknown-elf binutils-riscv64-unknown-elf gdb-riscv64-unknown-elf qemu-user qemu-system-misc",
+  "postCreateCommand": "apk add --no-cache gcc-riscv-none-elf binutils-riscv-none-elf qemu-system-riscv64 qemu-user make && ln -sf /usr/bin/riscv64-none-elf-gcc /usr/local/bin/riscv64-unknown-elf-gcc && ln -sf /usr/bin/riscv64-none-elf-objdump /usr/local/bin/riscv64-unknown-elf-objdump && ln -sf /usr/bin/qemu-system-riscv64 /usr/local/bin/qemu-riscv64",
   "remoteUser": "root"
 }
