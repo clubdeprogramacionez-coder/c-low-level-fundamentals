@@ -1,17 +1,5 @@
 {
   "name": "RISC-V C Low-Level Development",
-  "image": "mcr.microsoft.com/devcontainers/cpp:alpine",
-  "features": {
-    "ghcr.io/devcontainers/features/build-essential:1": {}
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vscode.cpptools",
-        "ms-vscode.makefile-tools"
-      ]
-    }
-  },
-  "postCreateCommand": "apk add --no-cache gcc-riscv-none-elf binutils-riscv-none-elf qemu-system-riscv64 qemu-user make && ln -sf /usr/bin/riscv64-none-elf-gcc /usr/local/bin/riscv64-unknown-elf-gcc && ln -sf /usr/bin/riscv64-none-elf-objdump /usr/local/bin/riscv64-unknown-elf-objdump && ln -sf /usr/bin/qemu-system-riscv64 /usr/local/bin/qemu-riscv64",
-  "remoteUser": "root"
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y gcc-riscv64-unknown-elf gdb-multiarch qemu-user qemu-system-riscv64 make && sudo ln -sf $(which gdb-multiarch) /usr/local/bin/riscv64-unknown-elf-gdb"
 }
