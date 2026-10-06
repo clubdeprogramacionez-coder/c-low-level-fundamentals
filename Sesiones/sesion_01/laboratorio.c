@@ -5,7 +5,7 @@
 #define UART0_LSR  ((volatile unsigned char *)(UART0_BASE + 5))
 
 void uart_init(void) {
-    /* La UART en QEMU virt está precargada */
+    /* Inicialización de la UART */
 }
 
 void uart_putc(char c) {
@@ -25,7 +25,8 @@ char uart_getc(void) {
     return 0;
 }
 
-void _start(void) {
+/* Punto de entrada desde ensamblador */
+void main_c(void) {
     uart_init();
     uart_puts("\n====================================\n");
     uart_puts("  Hola, mundo RISC-V Bare-Metal!  \n");
@@ -38,3 +39,17 @@ void _start(void) {
         }
     }
 }
+
+/* Rutina de arranque en ensamblador para configurar la pila */
+__asm__(
+    ".section .text\n"
+    ".global _start\n"
+    "_start:\n"
+    "    la sp, stack_top\n"  /* Cargar dirección tope de la pila */
+    "    tail main_c\n"        /* Saltar a la función en C */
+    ".section .bss\n"
+    ".align 4\n"
+    "stack_bottom:\n"
+    "    .skip 4096\n"         /* Reservar 4 KB para la pila */
+    "stack_top:\n"
+);
