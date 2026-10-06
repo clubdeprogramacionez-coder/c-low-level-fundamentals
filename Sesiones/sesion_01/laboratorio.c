@@ -40,5 +40,3 @@ void _start(void) {
         }
     }
 }
-    }
-}
