@@ -1,20 +1,5 @@
 {
   "name": "RISC-V C Low-Level Development",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
-  "postCreateCommand": "apt update && apt install -y qemu-system-misc curl && \
-    curl -LO https://github.com/riscv/riscv-gnu-toolchain/releases/download/20240109-1/riscv64-glibc-ubuntu-22.04-20240109-1.tar.gz && \
-    mkdir -p /opt/riscv && \
-    tar -xzf riscv64-glibc-ubuntu-22.04-20240109-1.tar.gz -C /opt/riscv/ && \
-    rm riscv64-glibc-ubuntu-22.04-20240109-1.tar.gz",
-  "containerEnv": {
-    "PATH": "${containerEnv:PATH}:/opt/riscv/bin"
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vscode.cpptools",
-        "ms-vscode.cmake-tools"
-      ]
-    }
-  }
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y gcc-riscv64-unknown-elf gdb-multiarch qemu-user qemu-system-riscv64 make picolibc-riscv64-unknown-elf libnewlib-dev && sudo ln -sf $(which gdb-multiarch) /usr/local/bin/riscv64-unknown-elf-gdb"
 }
