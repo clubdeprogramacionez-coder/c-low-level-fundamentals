@@ -1,4 +1,3 @@
-// laboratorio.c (sesión 1)
 #include "uart.h"
 
 #define UART0_BASE 0x10000000
@@ -6,11 +5,10 @@
 #define UART0_LSR  ((volatile unsigned char *)(UART0_BASE + 5))
 
 void uart_init(void) {
-    /* La UART en QEMU virt está precargada por defecto */
+    /* La UART en QEMU virt está precargada */
 }
 
 void uart_putc(char c) {
-    /* En QEMU virt se puede escribir directamente en el registro DR */
     *UART0_DR = c;
 }
 
@@ -36,7 +34,7 @@ void _start(void) {
     for (;;) {
         char c = uart_getc();
         if (c != 0) {
-            uart_putc(c); /* Echo de caracteres ingresados */
+            uart_putc(c); /* Echo */
         }
     }
 }
