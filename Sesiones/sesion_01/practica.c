@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "stdio.h"
 
 /**
  * Sesión 1: Introducción a Arquitecturas y Modelo de Memoria
